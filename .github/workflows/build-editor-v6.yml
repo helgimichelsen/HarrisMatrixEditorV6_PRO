@@ -1,10 +1,10 @@
 name: Build Harris Matrix Editor V6 PRO EXE
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   build-windows:
@@ -29,8 +29,12 @@ jobs:
         run: |
           pyinstaller HarrisMatrixEditorV6PRO.spec
 
+      - name: Vis dist-indhold
+        run: |
+          dir dist
+
       - name: Upload EXE som artifact
         uses: actions/upload-artifact@v4
         with:
           name: HarrisMatrixEditorV6PRO-Windows-EXE
-          path: dist/HarrisMatrixEditorV6_PRO.exe
+          path: dist/HarrisMatrixEditorV6PRO.exe
