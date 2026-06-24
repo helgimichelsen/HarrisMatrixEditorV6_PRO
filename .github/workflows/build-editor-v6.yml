@@ -27,7 +27,7 @@ jobs:
 
       - name: Byg EXE
         run: |
-          pyinstaller HarrisMatrixEditorV6_PRO.spec
+          pyinstaller HarrisMatrixEditorV6PRO.spec
 
       - name: Upload EXE som artifact
         uses: actions/upload-artifact@v4
